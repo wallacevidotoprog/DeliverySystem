@@ -2,8 +2,8 @@
 {
 	public class DisplayValue
 	{
-		public object? Value { get; private set; }
-		public string? Display { get; private set; }
+		public object Value { get; private set; }
+		public string Display { get; private set; }
 
 		public DisplayValue(object value, string display)
 		{
@@ -13,6 +13,6 @@
 
 		public object? GeValue() => this.Value;
 
-		public override string ToString() => Display?.ToString()?? string.Empty;
+		public override string ToString() => Display?.ToString() ?? string.Empty;
 	}
 }

@@ -3,9 +3,9 @@ using DeliverySystem.Core.Domain.Utils;
 using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
 
-namespace DeliverySystem.Core.Domain.ValueObject
+namespace DeliverySystem.Core.Domain.Entities
 {
-	public class Address
+	public class AddressEntity
 	{
 		[Required(ErrorMessage = "Logradouro é obrigatório")]
 		[StringLength(100, ErrorMessage = "Logradouro não pode exceder 100 caracteres")]
@@ -37,7 +37,7 @@ namespace DeliverySystem.Core.Domain.ValueObject
 		public string Country { get; private set; } = "Brasil";
 
 
-		public Address(string street, string number, string city, BrazilianState state, string postalCode)
+		public AddressEntity(string street, string number, string city, BrazilianState state, string postalCode)
 		{
 			Street = street;
 			Number = number;
@@ -46,7 +46,6 @@ namespace DeliverySystem.Core.Domain.ValueObject
 			PostalCode = NormalizePostalCode(postalCode);
 			Validate();
 		}
-
 		private DisplayValue NormalizePostalCode(string code)
 		{
 			if (string.IsNullOrWhiteSpace(code))
@@ -61,8 +60,6 @@ namespace DeliverySystem.Core.Domain.ValueObject
 			}
 			return new DisplayValue(temp, temp.Insert(5, "-"));
 		}
-
-
 		private void Validate()
 		{
 			List<ValidationResult> validationResults = new List<ValidationResult>();
