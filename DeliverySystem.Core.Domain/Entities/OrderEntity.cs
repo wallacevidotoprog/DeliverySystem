@@ -2,7 +2,7 @@
 
 namespace DeliverySystem.Core.Domain.Entities
 {
-	public class Order :BaseEntity
+	public class OrderEntity : BaseEntity
 	{
 		public ClientEntity Client { get; private set; }
 		public StoreEntity Store { get; private set; }
@@ -11,7 +11,7 @@ namespace DeliverySystem.Core.Domain.Entities
 		public DateTime? DeliveredAt { get; private set; }
 
 
-		public Order(ClientEntity client, StoreEntity store, decimal totalValue, OrderStatusEnum status = OrderStatusEnum.Created)
+		public OrderEntity(ClientEntity client, StoreEntity store, decimal totalValue, OrderStatusEnum status = OrderStatusEnum.Created)
 		{
 			if (totalValue <= 0) throw new ArgumentException("Valor da entrega deve ser maior que zero");
 

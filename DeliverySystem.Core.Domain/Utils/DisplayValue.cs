@@ -10,9 +10,6 @@
 			this.Value = value;
 			this.Display = display;
 		}
-
-		public object? GeValue() => this.Value;
-
 		public override string ToString() => Display?.ToString() ?? string.Empty;
 	}
 }

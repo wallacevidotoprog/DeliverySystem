@@ -78,7 +78,7 @@ namespace DeliverySystem.Core.Domain.Entities
 		}
 		public override string ToString()
 		{
-			return $"{Street}, {Number} {Complement} - {Neighborhood}, {City}/{State}, {PostalCode.GeValue}, {Country}";
+			return $"{Street}, {Number} {Complement} - {Neighborhood}, {City}/{State}, {PostalCode}, {Country}";
 		}
 	}
 }
