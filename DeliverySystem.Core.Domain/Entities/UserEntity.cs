@@ -1,23 +1,21 @@
 ﻿using DeliverySystem.Core.Domain.ValueObject;
-using System.ComponentModel.DataAnnotations;
 
 namespace DeliverySystem.Core.Domain.Entities
 {
 	public class UserEntity : BaseEntity
 	{
-		[Required(ErrorMessage = "Indentificador é obrigatório")]
 		public CpfCnpj Indentifier { get; private set; }
-
-		[Required(ErrorMessage = "Nome é obrigatório")]
 		public string Name { get; private set; }
-
-		[Required(ErrorMessage = "Endereço é obrigatório")]
+		public Password Password { get; private set; }
 		public AddressEntity Address { get; private set; }
 
 
-		public UserEntity( )
+		public UserEntity(CpfCnpj indentifier, string name, string password, AddressEntity address)
 		{
-				
+			Indentifier = indentifier;
+			Name = name ?? throw new ArgumentException("Nome é obrigatório");
+			Password = new Password(password);
+			Address = address;
 		}
 	}
 }

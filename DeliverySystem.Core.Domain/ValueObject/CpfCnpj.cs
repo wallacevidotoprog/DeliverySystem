@@ -1,11 +1,10 @@
 ﻿using DeliverySystem.Core.Domain.Enum;
-using DeliverySystem.Core.Domain.Interfaces;
 using DeliverySystem.Core.Domain.Utils;
 using System.Text.RegularExpressions;
 
 namespace DeliverySystem.Core.Domain.ValueObject
 {
-	public class CpfCnpj 
+	public class CpfCnpj
 	{
 		public DisplayValue Number { get; private set; }
 		public CpfOrCnpj Indentifier { get; private set; }

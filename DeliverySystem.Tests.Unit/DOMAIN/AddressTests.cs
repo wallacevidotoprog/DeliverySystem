@@ -1,9 +1,6 @@
 ﻿using DeliverySystem.Core.Domain.Enum;
 using DeliverySystem.Core.Domain.Utils;
-using DeliverySystem.Core.Domain.ValueObject;
-using System;
 using System.ComponentModel.DataAnnotations;
-using Xunit;
 
 public class AddressValidationTests
 {
